@@ -1,5 +1,5 @@
 #### User configure  ###############
-CONFIG_DEBUG = n
+CONFIG_DEBUG = y
 CONFIG_DEBUG_PKB = n
 CONFIG_DEBUG_WAIT = n
 CONFIG_DEBUG_SOCK = n
@@ -57,6 +57,7 @@ endif
 NET_STACK_OBJS =	shell/shell_obj.o	\
 			net/net_obj.o		\
 			arp/arp_obj.o		\
+			ip/ip_obj.o		\
 			lib/lib_obj.o
 
 all:tapip
@@ -70,6 +71,8 @@ net/net_obj.o:net/*.c
 	@make -C net/
 arp/arp_obj.o:arp/*.c
 	@make -C arp/
+ip/ip_obj.o:ip/*.c
+	@make -C ip/
 lib/lib_obj.o:lib/*.c
 	@make -C lib/
 

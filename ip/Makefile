@@ -1,9 +1,8 @@
-OBJS	= main.o net_command.o ping_command.o shell.o arping_command.o
-#ping_command.o
-SUBDIR	= shell
+OBJS	= ip_in.o icmp.o
+SUBDIR	= ip
 
-all:shell_obj.o
-shell_obj.o:$(OBJS)
+all:ip_obj.o
+ip_obj.o:$(OBJS)
 	@echo " [LD] $(SUBDIR)/$@"
 	$(Q)$(LD) -r -o $@ $^
 
@@ -13,3 +12,4 @@ shell_obj.o:$(OBJS)
 
 clean:
 	rm -f *.o
+
